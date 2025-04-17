@@ -13,6 +13,9 @@ export default function MenuBar(){
             <button onClick={()=> router.push('/portfolio')}>
                 Portfolio
             </button>
+            <button onClick={()=> router.push('/om')}>
+                Om mig
+            </button>
             <button onClick={()=> router.push('/kontakt')}>
                 Kontakt
             </button>
