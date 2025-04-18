@@ -5,7 +5,6 @@ import MenuBar from './MenuBar';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Componets/MenuBar',
   component: MenuBar,
   parameters: {
     layout: 'centered',
