@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FiTrash, FiArrowRight } from 'react-icons/fi';
+import {FiTrash, FiArrowRight } from 'react-icons/fi';
 
 import {Button} from './Button';
 
@@ -21,8 +21,9 @@ const meta: Meta<typeof Button> = {
 		children: {
 			control: 'text', // 👈 Allows editing in the Storybook controls panel
 		},
-    startIcon: { control: false },
-		endIcon: { control: false },
+    startIcon: { control: "select",
+    },
+		endIcon: { control: "select" },
 	},
 };
 
