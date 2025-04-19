@@ -1,21 +1,27 @@
 import clsx from 'clsx';
+import React from 'react'; 
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant?: 'primary' | 'outlined' | 'critical';
     size?: 'sm' | 'md' | 'lg';
+    startIcon?: React.ReactNode;
+	endIcon?: React.ReactNode;
 };
 
 export const Button = ({
 	children,
 	variant = 'primary',
     size = 'md',
+    startIcon,
+	endIcon,
 	className,
 	...props
 }: ButtonProps) => {
+
 	return (
 		<button
 			className={clsx(
-				'px-4 py-2 rounded font-medium transition-colors duration-200',
+				'inline-flex px-4 py-2 rounded font-medium transition-colors duration-200',
 				{
 					'bg-blue-600 text-white hover:bg-blue-700': variant === 'primary',
 					'border border-blue-600 text-blue-600 hover:bg-blue-50': variant === 'outlined',
@@ -30,7 +36,9 @@ export const Button = ({
 			)}
 			{...props}
 		>
+			{startIcon && <span className="mr-1">{startIcon}</span>}
 			{children}
+			{endIcon && <span className="ml-1">{endIcon}</span>}
 		</button>
 	);
 };

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { FiTrash, FiArrowRight } from 'react-icons/fi';
 
 import {Button} from './Button';
 
@@ -20,6 +21,8 @@ const meta: Meta<typeof Button> = {
 		children: {
 			control: 'text', // 👈 Allows editing in the Storybook controls panel
 		},
+    startIcon: { control: false },
+		endIcon: { control: false },
 	},
 };
 
@@ -57,4 +60,29 @@ export const Critical: Story = {
   args: {
     variant: "critical"
   }
+};
+
+export const WithStartIcon: Story = {
+	args: {
+		children: 'Delete',
+		startIcon: <FiTrash />,
+		variant: 'critical',
+	},
+};
+
+export const WithEndIcon: Story = {
+	args: {
+		children: 'Continue',
+		endIcon: <FiArrowRight />,
+		variant: 'primary',
+	},
+};
+
+export const WithBothIcons: Story = {
+	args: {
+		children: 'Next step',
+		startIcon: <FiTrash />,
+		endIcon: <FiArrowRight />,
+		variant: 'outlined',
+	},
 };
