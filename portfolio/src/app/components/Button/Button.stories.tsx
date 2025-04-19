@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Button from './Button';
+import {Button} from './Button';
 
 const meta = {
   component: Button,
@@ -11,3 +11,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+export const Outlined: Story = {args:{variant:'outlined'}};
+
+export const Critical: Story = {
+  args: {
+    variant: "critical"
+  }
+};
